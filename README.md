@@ -20,11 +20,16 @@ Proteins can have multiple functions, and may be dependent on interaction with o
 **Data Label Organisation**
 Gene Ontology (GO) data maps out protein functions as “parent”/”child” relationships. This is a directed acyclic graph (DAG). Each "child" node can have multiple "parents", each "parent" can have multiple "children".
 
+Top-level labels are Molecular Function (MF), Biological Process (BP) and Cellular Component (CC).
+
 **Challenge:**
 Accurately assign the function of each protein, including all parent functions.
 
 **Goal:**
 Develop a model that is able to predict the biological function of a set of proteins based on their amino acid sequence and other data. 
+
+**Evaluation:**
+The evaluation statistic of the CAFA5 competition, “F-measure”, is a modified F1-score, that takes into account the precision and recall of the model, as well as the information content of each label (given the relative location of that label within the directed acyclic graph, called "information accretion" (IA)), for each of three test sets (MF, BP, CC).
 
 ### Outline of Computational Pipeline
 Each *instance* is a protein with a particular amino acid sequence. 
@@ -40,4 +45,4 @@ Example Notebook file for computational pipeline: https://github.com/eamonbyrne/
 
  ### Deeper dive into structure within protein sequence embeddings
 
-Notebook for UMAP analysis and visualisations for protein sequence embeddings: 
+Notebook for UMAP analysis and visualisations for protein sequence embeddings: https://github.com/eamonbyrne/CAFA5/blob/main/embeddings-esm2-vs-t5-vs-protbert.ipynb
