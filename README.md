@@ -26,11 +26,18 @@ Accurately assign the function of each protein, including all parent functions.
 **Goal:**
 Develop a model that is able to predict the biological function of a set of proteins based on their amino acid sequence and other data. 
 
-**Outline of Pipeline**
-Each instance is a protein with a particular amino acid sequence. The features are the embeddings that have been pre-trained upon the amino acid sequences. Each label is a biological function that has been experimentally determined.
+### Outline of Computational Pipeline
+Each *instance* is a protein with a particular amino acid sequence. 
+The *features* are the embeddings that have been pre-trained upon the amino acid sequences. 
+Each *label* is a biological function that has been experimentally determined.
 
 1. Labels - Generate a (truncated) array of labels (multi- one-hot encoded) from the starting data (a list of protein+function pairings).
 2. Features - Load pre-trained embeddings as features.
 3. Model - Train a multilabel classification model using the embeddings as inputs.
 4. Evaluation - Evaluate model on held-out set of protein sequences.
 
+Example Notebook file for computational pipeline: https://github.com/eamonbyrne/CAFA5/blob/1bef5ca919da4793379f7efb5a36e1204c5f9ca4/30may2023-t5-neuralnetwork.ipynb
+
+ ### Deeper dive into structure within protein sequence embeddings
+
+Notebook for UMAP analysis and visualisations for protein sequence embeddings: 
